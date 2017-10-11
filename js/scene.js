@@ -17,7 +17,7 @@ function init() {
 	scene.background = new THREE.Color( 0x1a1a1a );
 
 	var objectLoader = new THREE.ObjectLoader()
-	objectLoader.load("../models/low_poly_island_2.json", function(obj) {
+	objectLoader.load("https://dl.dropboxusercontent.com/s/y9c86x75er2qpjf/low_poly_island.json", function(obj) {
 
 		// console.log(scene)
 
