@@ -9,6 +9,9 @@ var camera, scene, renderer
 
 function init() {
 
+	var logo3d = document.querySelector('.logo-3d')
+	logo3d.style.visibility = 'visible'
+
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200)
 	camera.position.z = 1
 	camera.position.x = 4
@@ -87,9 +90,11 @@ function init() {
 			if(directionY > 0){
 				scene.getObjectByName('Floating_rocks').position.y += .2
 				scene.getObjectByName('Floating_rocks').position.z += .1
+				scene.getObjectByName('Floating_rocks').position.x += .3
 			} else if (directionY < 0) {
 				scene.getObjectByName('Floating_rocks').position.y -= .2
 				scene.getObjectByName('Floating_rocks').position.z -= .1
+				scene.getObjectByName('Floating_rocks').position.x -= .3
 			}
 		});
 
@@ -174,7 +179,7 @@ function init() {
 
 window.onresize = function() {
 
-	// renderer.setSize(window.innerWidth, window.innerHeight)
+	renderer.setSize(window.innerWidth, window.innerHeight)
 	var aspectRatio = window.innerWidth / window.innerHeight
 	camera.aspect = aspectRatio
 	camera.updateProjectionMatrix()

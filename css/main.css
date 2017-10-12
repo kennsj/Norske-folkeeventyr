@@ -106,14 +106,14 @@ button:hover {
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    z-index: 1000;
+    z-index: 1002;
     visibility: hidden;
     width: 50%;
     height: 90vh;
     top: calc(5vh - 25px);
     /* background-color: rgba(235, 227, 210, .8); */
     background: url('../img/scroll.png') no-repeat;
-    opacity: .9;
+
     background-size: cover;
     margin: 0 auto;
     padding-bottom: 25px;
@@ -125,7 +125,7 @@ button:hover {
     height: 5px;
     width: 100px;
     background-color: #AD322D;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
 }
 
 /* .story-img {
@@ -169,6 +169,18 @@ button .exit:hover {
 .show {
     visibility: visible;
     transition: 1s;
+}
+
+.logo-3d {
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    background: url('../img/Logo.png') no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    z-index: 1001;
 }
 
 /* LOADER */
