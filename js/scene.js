@@ -1,3 +1,4 @@
+
 document.querySelector('button', '.start').addEventListener('click', function() {
 	init()
 	animate()
@@ -14,12 +15,12 @@ function init() {
 	camera.position.y = 3
 
 	scene = new THREE.Scene()
-	scene.background = new THREE.Color( 0x1a1a1a );
+	scene.background = new THREE.Color(0x1a1a1a);
 
 	var objectLoader = new THREE.ObjectLoader()
 	objectLoader.load("https://dl.dropboxusercontent.com/s/y9c86x75er2qpjf/low_poly_island.json", function(obj) {
 
-		// console.log(scene)
+		console.log(scene)
 
 		scene.add(obj)
 
@@ -40,7 +41,7 @@ function init() {
 			}
 		})
 
-		scene.traverse(function(node){
+		scene.traverse(function(node) {
 
 			if (node.material) {
 				node.material.side = THREE.DoubleSide
@@ -69,6 +70,29 @@ function init() {
 
 			}
 		})
+
+		document.addEventListener('mousemove', function(event) {
+			directionX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+
+			if(directionX < 0){
+				scene.position.y -= .001
+				scene.position.z += .001
+			} else if (directionX > 0){
+				scene.position.y += .001
+				scene.position.z -= .001
+			}
+
+			directionY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+
+			if(directionY > 0){
+				scene.getObjectByName('Floating_rocks').position.y += .2
+				scene.getObjectByName('Floating_rocks').position.z += .1
+			} else if (directionY < 0) {
+				scene.getObjectByName('Floating_rocks').position.y -= .2
+				scene.getObjectByName('Floating_rocks').position.z -= .1
+			}
+		});
+
 		/*
 		var geometry = new THREE.SphereGeometry(20, 20, 50, 0, Math.PI * 2, 0, Math.PI)
 		var load = new THREE.TextureLoader().load('../07%20–%20Island%20Final/texture/arches_pinetree.png')
@@ -150,7 +174,7 @@ function init() {
 
 window.onresize = function() {
 
-	renderer.setSize(window.innerWidth, window.innerHeight)
+	// renderer.setSize(window.innerWidth, window.innerHeight)
 	var aspectRatio = window.innerWidth / window.innerHeight
 	camera.aspect = aspectRatio
 	camera.updateProjectionMatrix()

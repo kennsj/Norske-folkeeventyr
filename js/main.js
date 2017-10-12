@@ -21,5 +21,9 @@ var close = document.querySelector('.exit')
 close.addEventListener('mousedown', function(event){
     event.preventDefault()
     console.log('work');
-    popup.classList.remove('show')
+    popup.classList.remove('show').velocity({
+        duration: '1s'
+    }, {
+        delay: 500
+    })
 })
