@@ -18,7 +18,7 @@ function init() {
 	camera.position.y = 3
 
 	scene = new THREE.Scene()
-	scene.background = new THREE.Color(0x1a1a1a);
+	scene.background = new THREE.Color(0x000000);
 
 	var objectLoader = new THREE.ObjectLoader()
 	objectLoader.load("https://dl.dropboxusercontent.com/s/y9c86x75er2qpjf/low_poly_island.json", function(obj) {
