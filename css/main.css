@@ -131,7 +131,7 @@ button:hover {
     flex-direction: column;
     position: absolute;
     z-index: 1002;
-    /* visibility: hidden; */
+    visibility: hidden;
     width: 50%;
     height: 85vh;
     top: calc(5vh - 25px);
