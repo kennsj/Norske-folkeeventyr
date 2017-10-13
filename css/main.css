@@ -107,7 +107,7 @@ h3 {
 
 button {
     display: block;
-    padding: 15px 25px 25px 25px;
+    padding: 15px 25px 15px 25px;
     margin: 100px auto 0 auto;
     background-color: #AD322D;
     font-family: 'Amatic SC';
@@ -131,7 +131,7 @@ button:hover {
     flex-direction: column;
     position: absolute;
     z-index: 1002;
-    visibility: hidden;
+    /* visibility: hidden; */
     width: 50%;
     height: 85vh;
     top: calc(5vh - 25px);
@@ -139,29 +139,20 @@ button:hover {
     background-size: contain;
     background-position: center;
     margin: 0 auto;
-    padding: 2.5vh;
+    padding: 5vh;
     overflow-y: scroll;
     /* transition: 1s; */
 }
 
 .story-divider {
-    height: 5px;
-    width: 100px;
+    height: 3px;
+    width: 50px;
     background-color: #AD322D;
     margin: 0 auto 30px auto;
 }
 
-button .exit {
-    position: relative;
-    /* transition: 0; */
-}
-
-button .exit:hover {
-    /* transition: 1s */
-}
-
 .story-popup h2 {
-    margin-top: 100px;
+    margin-top: -50px;
     color: #1a1a1a;
 }
 
@@ -175,13 +166,14 @@ button .exit:hover {
 }
 
 .story {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 
 .story img {
     display: block;
-    margin: 0 auto;
+    width: 80%;
+    margin: 20px auto;
 }
 
 .story p {
@@ -189,6 +181,15 @@ button .exit:hover {
     text-align: left;
     color: #1a1a1a;
     padding: 20px 0;
+}
+
+.button_exit {
+    margin: 20px auto;
+    /* transition: 0; */
+}
+
+button .exit:hover {
+    /* transition: 1s */
 }
 
 .show {
