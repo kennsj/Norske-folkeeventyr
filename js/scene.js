@@ -1,9 +1,28 @@
 
 document.querySelector('button', '.start').addEventListener('click', function() {
+
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200)
+
+	camera.position.z = 20
+	camera.position.x = 20
+	camera.position.y = 20
+
 	init()
 	animate()
-	document.querySelector('section').style.display = 'none'
+	/*
+	// document.querySelector('section').style.display = 'none'
+	var section = document.querySelector('section')
+	Velocity(section, {
+		opacity: 0,
+		duration: '1s'
+	})
+	setTimeout(function(){
+		section.style.display = 'none'
+	}, 1100)
+	document.querySelector('.preloader').style.display = 'flex'
+	*/
 })
+
 
 var camera, scene, renderer
 
@@ -12,29 +31,21 @@ function init() {
 	var logo3d = document.querySelector('.logo-3d')
 	logo3d.style.visibility = 'visible'
 
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200)
+	// camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200)
 	camera.position.z = 1
 	camera.position.x = 4
 	camera.position.y = 3
 
 	scene = new THREE.Scene()
-	scene.background = new THREE.Color(0x000000);
+	scene.background = new THREE.Color(0x000000)
 
 	var objectLoader = new THREE.ObjectLoader()
 	objectLoader.load("https://dl.dropboxusercontent.com/s/y9c86x75er2qpjf/low_poly_island.json", function(obj) {
-
-		console.log(scene)
 
 		scene.add(obj)
 
 		var troll = scene.getObjectByName('Troll.1', true)
 		var body = scene.getObjectByName('Body', true)
-
-		var ambientLight = scene.getObjectByName('AmbientLight 11')
-		console.log(ambientLight);
-
-		// console.log(body);
-		// console.log(scene);
 
 		body.traverse(function(node) {
 			if (node.material) {
@@ -98,21 +109,21 @@ function init() {
 			}
 		});
 
-		/*
 		var geometry = new THREE.SphereGeometry(20, 20, 50, 0, Math.PI * 2, 0, Math.PI)
-		var load = new THREE.TextureLoader().load('../07%20–%20Island%20Final/texture/arches_pinetree.png')
+		var load = new THREE.TextureLoader().load('https://dl.dropboxusercontent.com/s/zhdq17mpidib3oo/arches_pinetree.png')
 
 		var material = new THREE.MeshStandardMaterial({
 			emissive: 0x1a1a1a,
-			emissiveIntensity: .01,
+			emissiveIntensity: .001,
 			color: 0x000000,
 			map: load,
 			overdraw: true,
-			side: THREE.BackSide,
+			side: THREE.BackSide
 		})
 
-		sphere.mesh(geometry, material)
-		scene.add(sphere)*/
+
+		sphere = new THREE.Mesh(geometry, material)
+		scene.add(sphere)
 
 
 		// ADD EVENTLISTENER TO CLICK
@@ -136,9 +147,10 @@ function init() {
 			if (intersects.length > 0) {
 
 				var popup = document.querySelector('.story-popup')
-				console.log(popup);
 
 				popup.classList.add('show')
+
+				camera.position.x += 1
 
 				// alert('Har du hørt om trollet som hatet internettet?')
 
@@ -160,7 +172,7 @@ function init() {
 	})
 
 	renderer.setSize(window.innerWidth, window.innerHeight)
-	renderer.shadowMapEnabled = true
+	renderer.shadowMap.enabled = true
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
 	document.body.appendChild(renderer.domElement)
@@ -193,7 +205,6 @@ function animate() {
 	render()
 
 }
-
 
 
 function render() {

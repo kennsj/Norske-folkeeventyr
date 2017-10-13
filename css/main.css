@@ -1,8 +1,11 @@
+/* * {
+    outline: 1px solid rgba(0, 0, 0, .5)
+} */
+
 body {
     display: flex;
     justify-content: center;
-    /* background: linear-gradient(to right, rgba(255, 216, 156, 0.51), #19547b) */
-    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    background-color: #1a1a1a;
 }
 
 canvas {
@@ -62,6 +65,30 @@ p {
     margin-top: 100px;
 }
 
+.tutorial-image {
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+}
+
+.left-mouse {
+    background: url('../img/left-mouse.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.middle-mouse {
+    background: url('../img/middle-mouse.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.right-mouse {
+    background: url('../img/right-mouse.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
 h3 {
     font-family: 'Amatic SC';
     font-size: 30px;
@@ -74,17 +101,13 @@ h3 {
     margin-top: -15px;
 }
 
-.roter {}
-
 .zoom {
     margin: 0 70px;
 }
 
-.justere {}
-
 button {
     display: block;
-    padding: 20px;
+    padding: 15px 25px 25px 25px;
     margin: 100px auto 0 auto;
     background-color: #AD322D;
     font-family: 'Amatic SC';
@@ -93,6 +116,7 @@ button {
     color: white;
     border: 0;
     outline: none;
+    cursor: pointer;
     /* transition: 1s; */
 }
 
@@ -109,14 +133,13 @@ button:hover {
     z-index: 1002;
     visibility: hidden;
     width: 50%;
-    height: 90vh;
+    height: 85vh;
     top: calc(5vh - 25px);
-    /* background-color: rgba(235, 227, 210, .8); */
     background: url('../img/scroll.png') no-repeat;
-
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
     margin: 0 auto;
-    padding-bottom: 25px;
+    padding: 2.5vh;
     overflow-y: scroll;
     /* transition: 1s; */
 }
@@ -128,25 +151,17 @@ button:hover {
     margin: 0 auto 30px auto;
 }
 
-/* .story-img {
-    background: url('../img/askeladden.png');
-    background-size: contain;
-    height: 250px;
-    width: 50%;
-    margin: 120px auto 0 auto;
-}*/
-
 button .exit {
     position: relative;
-    transition: 0
+    /* transition: 0; */
 }
 
 button .exit:hover {
-    transition: 0
+    /* transition: 1s */
 }
 
 .story-popup h2 {
-    margin-top: 150px;
+    margin-top: 100px;
     color: #1a1a1a;
 }
 
@@ -155,15 +170,25 @@ button .exit:hover {
 }
 
 .story {
-    width: 90%;
     height: 50%;
     overflow: scroll;
 }
 
-.story-popup p {
+.story {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.story img {
+    display: block;
+    margin: 0 auto;
+}
+
+.story p {
+    width: 90%;
     text-align: left;
     color: #1a1a1a;
-    padding: 30px 100px 0 100px;
+    padding: 20px 0;
 }
 
 .show {
@@ -186,7 +211,7 @@ button .exit:hover {
 /* LOADER */
 
 .preloader {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -198,14 +223,14 @@ button .exit:hover {
 .load-left-bg {
     position: absolute;
     background-color: #1a1a1a;
-    width: 50%;
+    /* width: 50%; */
     height: 100vh;
     left: 0;
 }
 
 .load-right-bg {
     position: absolute;
-    width: 50%;
+    /* width: 50%; */
     height: 100vh;
     right: 0;
     background-color: #1a1a1a;

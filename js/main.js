@@ -1,29 +1,36 @@
-
+/*
 var load_left = document.querySelector('.load-left-bg')
 var load_right = document.querySelector('.load-right-bg')
 var loader = document.querySelector('.loading')
 
-setTimeout(function(){
-    loader.classList.add('fade-out')
+function loader(){
+
+    // loader.classList.add('fade-out')
+
     setTimeout(function(){
-        load_left.classList.add('slide-left', 'fade-out')
-        load_right.classList.add('slide-right', 'fade-out')
+        Velocity(load_left, {
+            translateX: '-50vw',
+            duration: '2s'
+        })
         setTimeout(function(){
             document.querySelector('.preloader').style.display = 'none'
         }, 1000)
     }, 500)
-}, 1000)
-
+}
+*/
 
 var popup = document.querySelector('.story-popup')
 var close = document.querySelector('.exit')
 
 close.addEventListener('mousedown', function(event){
+
     event.preventDefault()
-    console.log('work');
-    popup.classList.remove('show').velocity({
-        duration: '1s'
-    }, {
-        delay: 500
-    })
+    popup.classList.remove('show')
+
 })
+
+
+
+// Transition home – 3D
+
+var section = document.querySelector('section')
