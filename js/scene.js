@@ -179,7 +179,7 @@ function init() {
 				Velocity(popup, {
 					opacity: 1
 				}, {
-					duration: 500
+					duration: 100
 				})
 
 				popup.classList.add('show')
