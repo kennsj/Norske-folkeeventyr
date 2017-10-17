@@ -65,19 +65,22 @@ function init() {
 	camera.position.y = 3
 
 	scene = new THREE.Scene()
-	scene.background = new THREE.Color(0x000000)
+	scene.background = new THREE.Color(0x1a1a1a);
 
 	var objectLoader = new THREE.ObjectLoader()
-	objectLoader.load("https://dl.dropboxusercontent.com/s/y9c86x75er2qpjf/low_poly_island.json", function(obj) {
+	//objectLoader.load("https://dl.dropboxusercontent.com/s/y9c86x75er2qpjf/low_poly_island.json", function(obj) {
+	objectLoader.load('https://dl.dropboxusercontent.com/s/q15e8mph1rnfsuf/island_dark_light.json', function(obj) {
 
 		scene.add(obj)
 
 		var troll = scene.getObjectByName('Troll.1', true)
 		var body = scene.getObjectByName('Body', true)
+		var outer_sphere = scene.getObjectByName('Sphere 2', true)
 
 		body.traverse(function(node) {
-			if (node.material) {
+			if (node.background) {
 
+				node.background = new THREE.Color('rgba(255, 255, 255, 0)')
 				// ...
 
 			}
@@ -110,9 +113,13 @@ function init() {
 				child.receiveShadow = true
 				child.flatShading = true
 
+				outer_sphere.receiveShadow = false
+				outer_sphere.castShadow = false
+
 			}
 		})
 
+		// Animating rock / scene position in relation to mouse cursor
 		document.addEventListener('mousemove', function(event) {
 			directionX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
 			/*
@@ -137,22 +144,6 @@ function init() {
 			}
 		});
 
-		var geometry = new THREE.SphereGeometry(20, 20, 50, 0, Math.PI * 2, 0, Math.PI)
-		var load = new THREE.TextureLoader().load('https://dl.dropboxusercontent.com/s/zhdq17mpidib3oo/arches_pinetree.png')
-
-		var material = new THREE.MeshStandardMaterial({
-			emissive: 0x1a1a1a,
-			emissiveIntensity: .001,
-			color: 0x000000,
-			map: load,
-			overdraw: true,
-			side: THREE.BackSide
-		})
-
-
-		sphere = new THREE.Mesh(geometry, material)
-		scene.add(sphere)
-
 
 		// ADD EVENTLISTENER TO CLICK
 
@@ -164,6 +155,7 @@ function init() {
 		function onMouseDown(event) {
 
 			event.preventDefault()
+
 			// Calculating mouse cursor position ( since 3D calculates reverse mouse position, the math has to re-reverse it )
 			mouse.x = (event.clientX / renderer.domElement.width) * 2 - 1
 			mouse.y = -(event.clientY / renderer.domElement.height) * 2 + 1
@@ -200,7 +192,7 @@ function init() {
 	renderer = new THREE.WebGLRenderer({
 
 		antialias: true,
-		alpha: false
+		alpha: true
 
 	})
 
