@@ -1,4 +1,4 @@
-// Animate elements in on front page
+// Animate in elements on the front page
 
 var logo = document.querySelector('.logo')
 var article_h2 = document.querySelector('article h2')
@@ -40,7 +40,7 @@ window.onload = function() {
         translateY: 0
     }, {
         duration: 700,
-        delay: 1200
+        //delay: 1200
     })
 }
 
@@ -75,8 +75,3 @@ close.addEventListener('mousedown', function(event) {
 	popup.classList.remove('show')
 
 })
-
-
-// Transition home – 3D
-
-var section = document.querySelector('section')

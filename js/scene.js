@@ -9,18 +9,31 @@ document.querySelector('button', '.start').addEventListener('click', function() 
 
 	init()
 	animate()
-	/*
+
 	// document.querySelector('section').style.display = 'none'
 	var section = document.querySelector('section')
 	Velocity(section, {
-		opacity: 0,
-		duration: '1s'
+		opacity: 0
+	}, {
+		duration: 1
 	})
 	setTimeout(function(){
 		section.style.display = 'none'
 	}, 1100)
-	document.querySelector('.preloader').style.display = 'flex'
+
+	// document.querySelector('.preloader').style.display = 'flex'
+
+	var canvas = document.querySelector('canvas')
+
+	canvas.style.display = 'none'
+	canvas.style.opacity = '0'
+
+	/*
+	// Animate out the front page and transition to 3D scene
+
+	var section = document.querySelector('section')
 	*/
+
 })
 
 
