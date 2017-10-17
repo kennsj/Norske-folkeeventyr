@@ -1,3 +1,49 @@
+// Animate elements in on front page
+
+var logo = document.querySelector('.logo')
+var article_h2 = document.querySelector('article h2')
+var article_p = document.querySelector('article p')
+var tutorial = document.querySelector('.tutorial')
+var button_start = document.querySelector('article button')
+
+window.onload = function() {
+	Velocity(logo, {
+		opacity: 1,
+		translateY: 0,
+	}, {
+        duration: 700,
+        delay: 0
+    })
+    Velocity(article_h2, {
+        opacity: 1,
+        translateY: 0,
+    }, {
+        duration: 700,
+        delay: 300
+    })
+    Velocity(article_p, {
+        opacity: 1,
+        translateY: 0,
+    }, {
+        duration: 700,
+        delay: 600
+    })
+    Velocity(tutorial, {
+        opacity: 1,
+        translateY: 0
+    }, {
+        duration: 700,
+        delay: 900
+    })
+    Velocity(button_start, {
+        opacity: 1,
+        translateY: 0
+    }, {
+        duration: 700,
+        delay: 1200
+    })
+}
+
 /*
 var load_left = document.querySelector('.load-left-bg')
 var load_right = document.querySelector('.load-right-bg')
@@ -22,13 +68,13 @@ function loader(){
 var popup = document.querySelector('.story-popup')
 var close = document.querySelector('.exit')
 
-close.addEventListener('mousedown', function(event){
+close.addEventListener('mousedown', function(event) {
 
-    event.preventDefault()
-    popup.classList.remove('show')
+	event.preventDefault()
+	console.log('work');
+	popup.classList.remove('show')
 
 })
-
 
 
 // Transition home – 3D

@@ -32,6 +32,9 @@ header {
     background: url('../img/Logo.png') no-repeat;
     background-size: contain;
     width: 500px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all cubic-bezier(.68,.54,.79,.68) .7s;
 }
 
 article {
@@ -58,11 +61,26 @@ p {
     margin: 0 auto;
 }
 
+article h2 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all cubic-bezier(.68,.54,.79,.68) .7s;
+}
+
+article p {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all cubic-bezier(.68,.54,.79,.68) .7s;
+}
+
 .tutorial {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 100px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all cubic-bezier(.68,.54,.79,.68) .7s;
 }
 
 .tutorial-image {
@@ -99,6 +117,8 @@ h3 {
 
 .tutorial p {
     margin-top: -15px;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .zoom {
@@ -118,6 +138,12 @@ button {
     outline: none;
     cursor: pointer;
     /* transition: 1s; */
+}
+
+article button {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all cubic-bezier(.68,.54,.79,.68) .7s;
 }
 
 button:hover {
@@ -183,7 +209,7 @@ button:hover {
     padding: 20px 0;
 }
 
-.button_exit {
+.exit {
     margin: 20px auto;
     /* transition: 0; */
 }

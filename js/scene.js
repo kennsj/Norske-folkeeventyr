@@ -87,25 +87,25 @@ function init() {
 
 		document.addEventListener('mousemove', function(event) {
 			directionX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
-
+			/*
 			if(directionX < 0){
 				scene.position.y -= .001
 				scene.position.z += .001
 			} else if (directionX > 0){
 				scene.position.y += .001
 				scene.position.z -= .001
-			}
+			}*/
 
 			directionY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
 
 			if(directionY > 0){
-				scene.getObjectByName('Floating_rocks').position.y += .2
-				scene.getObjectByName('Floating_rocks').position.z += .1
-				scene.getObjectByName('Floating_rocks').position.x += .3
+				scene.getObjectByName('Floating_rocks').position.y += .05
+				//scene.getObjectByName('Floating_rocks').position.z += .01
+				//scene.getObjectByName('Floating_rocks').position.x += .3
 			} else if (directionY < 0) {
-				scene.getObjectByName('Floating_rocks').position.y -= .2
-				scene.getObjectByName('Floating_rocks').position.z -= .1
-				scene.getObjectByName('Floating_rocks').position.x -= .3
+				scene.getObjectByName('Floating_rocks').position.y -= .05
+				//scene.getObjectByName('Floating_rocks').position.z -= .01
+				//scene.getObjectByName('Floating_rocks').position.x -= .3
 			}
 		});
 
@@ -150,8 +150,7 @@ function init() {
 
 				popup.classList.add('show')
 
-				camera.position.x += 1
-
+				// camera.position.x += 1
 				// alert('Har du hørt om trollet som hatet internettet?')
 
 			}
@@ -186,16 +185,14 @@ function init() {
 	controls.minPolarAngle = Math.PI / 4
 	controls.maxPolarAngle = Math.PI / 2
 
-}
+	window.onresize = function() {
 
+		renderer.setSize(window.innerWidth, window.innerHeight)
+		var aspectRatio = window.innerWidth / window.innerHeight
+		camera.aspect = aspectRatio
+		camera.updateProjectionMatrix()
 
-window.onresize = function() {
-
-	renderer.setSize(window.innerWidth, window.innerHeight)
-	var aspectRatio = window.innerWidth / window.innerHeight
-	camera.aspect = aspectRatio
-	camera.updateProjectionMatrix()
-
+	}
 }
 
 
