@@ -3,6 +3,6 @@
 # Norske-folkeeventyr
 Interactive 3D-website to show-case old, traditional Norwegian folk lores. Inspiration and stories taken from [Folkeventyr.no](http://folkeeventyr.no)
 
-Visit here https://kennsj.github.io/Norske-folkeeventyr/
-
 A two week school project made by [Robin Ingebrigtsen](https://github.com/remix187) and [Kenneth Jørgensen](https://github.com/kennsj)
+
+Go [here](https://kennsj.github.io/Norske-folkeeventyr/) to view our project.
