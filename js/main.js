@@ -40,7 +40,7 @@ window.onload = function() {
         translateY: 0
     }, {
         duration: 700,
-        //delay: 1200
+        delay: 1200
     })
 }
 
