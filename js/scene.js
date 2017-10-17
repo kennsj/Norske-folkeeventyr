@@ -15,7 +15,7 @@ document.querySelector('button', '.start').addEventListener('click', function() 
 	Velocity(section, {
 		opacity: 0
 	}, {
-		duration: 1
+		duration: 1000
 	})
 	setTimeout(function(){
 		section.style.display = 'none'
@@ -27,6 +27,24 @@ document.querySelector('button', '.start').addEventListener('click', function() 
 
 	canvas.style.display = 'none'
 	canvas.style.opacity = '0'
+
+	Velocity(canvas, {
+		opacity: 1
+	}, {
+		duration: 1000,
+		delay: 1100
+	})
+	setTimeout(function(){
+		canvas.style.display = 'block'
+	}, 1000)
+
+	var logo3d = document.querySelector('.logo-3d')
+	Velocity(logo3d, {
+		opacity: 1
+	}, {
+		duration: 1000,
+		delay: 1100
+	})
 
 	/*
 	// Animate out the front page and transition to 3D scene
@@ -40,9 +58,6 @@ document.querySelector('button', '.start').addEventListener('click', function() 
 var camera, scene, renderer
 
 function init() {
-
-	var logo3d = document.querySelector('.logo-3d')
-	logo3d.style.visibility = 'visible'
 
 	// camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200)
 	camera.position.z = 1
@@ -160,6 +175,12 @@ function init() {
 			if (intersects.length > 0) {
 
 				var popup = document.querySelector('.story-popup')
+
+				Velocity(popup, {
+					opacity: 1
+				}, {
+					duration: 500
+				})
 
 				popup.classList.add('show')
 

@@ -1,3 +1,5 @@
+
+
 // Animate in elements on the front page
 
 var logo = document.querySelector('.logo')
@@ -72,6 +74,15 @@ close.addEventListener('mousedown', function(event) {
 
 	event.preventDefault()
 	console.log('work');
-	popup.classList.remove('show')
+
+    Velocity(popup, {
+        opacity: 0
+    }, {
+        duration: 200,
+        delay: 0
+    })
+    setTimeout(function(){
+        popup.classList.remove('show')
+    }, 1000)
 
 })

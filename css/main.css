@@ -5,7 +5,7 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: #1a1a1a;
+    background-color: #000000;
 }
 
 canvas {
@@ -171,6 +171,7 @@ button:hover {
     background-position: center;
     margin: 0 auto;
     padding: 5vh;
+    opacity: 0;
     overflow-y: scroll;
     /* transition: 1s; */
 }
@@ -229,7 +230,6 @@ button .exit:hover {
 }
 
 .logo-3d {
-    visibility: hidden;
     position: absolute;
     top: 50px;
     background: url('../img/Logo.png') no-repeat;
@@ -237,6 +237,7 @@ button .exit:hover {
     width: 200px;
     height: 50px;
     margin: 0 auto;
+    opacity: 0;
     z-index: 1001;
 }
 
