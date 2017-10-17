@@ -1,7 +1,7 @@
 ![alt text](https://raw.githubusercontent.com/kennsj/Norske-folkeeventyr/master/img/eventyr-bg.jpg)
 
 # Norske-folkeeventyr
-Interactive 3D-website for Norwegian folk lore
+Interactive 3D-website to show-case old, traditional Norwegian folk lores. Inspiration and stories taken from [Folkeventyr.no](http://folkeeventyr.no)
 
 Visit here https://kennsj.github.io/Norske-folkeeventyr/
 
