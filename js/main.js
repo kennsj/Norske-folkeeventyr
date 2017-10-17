@@ -78,7 +78,7 @@ close.addEventListener('mousedown', function(event) {
     Velocity(popup, {
         opacity: 0
     }, {
-        duration: 200,
+        duration: 100,
         delay: 0
     })
     setTimeout(function(){

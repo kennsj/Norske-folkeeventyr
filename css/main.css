@@ -90,7 +90,7 @@ article p {
 .tutorial-image {
     display: block;
     margin: 0 auto;
-    height: 40px;
+    height: 60px;
 }
 
 .left-mouse {
@@ -238,6 +238,41 @@ button .exit:hover {
     margin: 0 auto;
     opacity: 0;
     z-index: 1001;
+}
+
+.social-icons {
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    right: 50px;
+    bottom: 50px;
+    width: 150px;
+    height: 100px;
+}
+
+.social-fb {
+    height: 30px;
+    width: 30px;
+    background: url('../img/social-fb.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.social-twitter {
+    height: 30px;
+    width: 30px;
+    background: url('../img/social-twitter.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.social-google {
+    height: 30px;
+    width: 30px;
+    background: url('../img/social-google.png') no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 /* LOADER */
