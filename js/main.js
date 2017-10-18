@@ -1,5 +1,3 @@
-
-
 // Animate in elements on the front page
 
 var logo = document.querySelector('.logo')
@@ -13,37 +11,37 @@ window.onload = function() {
 		opacity: 1,
 		translateY: 0,
 	}, {
-        duration: 700,
-        delay: 0
-    })
-    Velocity(article_h2, {
-        opacity: 1,
-        translateY: 0,
-    }, {
-        duration: 700,
-        delay: 300
-    })
-    Velocity(article_p, {
-        opacity: 1,
-        translateY: 0,
-    }, {
-        duration: 700,
-        delay: 600
-    })
-    Velocity(tutorial, {
-        opacity: 1,
-        translateY: 0
-    }, {
-        duration: 700,
-        delay: 900
-    })
-    Velocity(button_start, {
-        opacity: 1,
-        translateY: 0
-    }, {
-        duration: 700,
-        delay: 1200
-    })
+		duration: 700,
+		delay: 0
+	})
+	Velocity(article_h2, {
+		opacity: 1,
+		translateY: 0,
+	}, {
+		duration: 700,
+		delay: 300
+	})
+	Velocity(article_p, {
+		opacity: 1,
+		translateY: 0,
+	}, {
+		duration: 700,
+		delay: 600
+	})
+	Velocity(tutorial, {
+		opacity: 1,
+		translateY: 0
+	}, {
+		duration: 700,
+		delay: 900
+	})
+	Velocity(button_start, {
+		opacity: 1,
+		translateY: 0
+	}, {
+		duration: 700,
+		delay: 1200
+	})
 }
 
 /*
@@ -75,14 +73,46 @@ close.addEventListener('mousedown', function(event) {
 	event.preventDefault()
 	console.log('work');
 
-    Velocity(popup, {
-        opacity: 0
-    }, {
-        duration: 100,
-        delay: 0
-    })
-    setTimeout(function(){
-        popup.classList.remove('show')
-    }, 1000)
+	Velocity(popup, {
+		opacity: 0
+	}, {
+		duration: 100,
+		delay: 0
+	})
+	setTimeout(function() {
+		popup.classList.remove('show')
+	}, 1000)
 
 })
+
+// ADD SOUND TO HOVER EFFECT
+
+var buttons = document.querySelectorAll('button')
+var social_icons = document.querySelectorAll('.social-icon')
+var sound_hover = document.querySelector('audio')
+sound_hover.volume = 0.05
+
+/*
+
+button_start.addEventListener('mouseenter', function() {
+	sound_hover.play()
+})
+
+*/
+
+
+
+for (var i = 0; i < buttons.length; i++){
+	buttons[i].addEventListener('mouseenter', function(){
+		sound_hover.play()
+	})
+}
+
+for (var i = 0; i < social_icons.length; i++){
+	social_icons[i].addEventListener('mouseenter', function(){
+		sound_hover.play()
+	})
+}
+
+
+//

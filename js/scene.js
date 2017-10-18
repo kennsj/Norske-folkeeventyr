@@ -163,6 +163,8 @@ function init() {
 			raycaster.setFromCamera(mouse, camera)
 
 			var intersects = raycaster.intersectObjects(troll.children, true)
+			var sound_hover = document.querySelector('audio')
+			sound_hover.volume = 0.05
 
 			if (intersects.length > 0) {
 
@@ -174,6 +176,7 @@ function init() {
 					duration: 100
 				})
 
+				sound_hover.play()
 				popup.classList.add('show')
 
 				// camera.position.x += 1
