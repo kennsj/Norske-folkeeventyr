@@ -264,6 +264,7 @@ button .exit:hover {
     bottom: 50px;
     width: 150px;
     height: 100px;
+    z-index: 9999;
 }
 
 .social-fb {

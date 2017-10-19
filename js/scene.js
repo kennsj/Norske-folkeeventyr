@@ -1,4 +1,3 @@
-
 document.querySelector('button', '.start').addEventListener('click', function() {
 
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200)
@@ -17,7 +16,7 @@ document.querySelector('button', '.start').addEventListener('click', function() 
 	}, {
 		duration: 1000
 	})
-	setTimeout(function(){
+	setTimeout(function() {
 		section.style.display = 'none'
 	}, 1100)
 
@@ -34,7 +33,7 @@ document.querySelector('button', '.start').addEventListener('click', function() 
 		duration: 1000,
 		delay: 1100
 	})
-	setTimeout(function(){
+	setTimeout(function() {
 		canvas.style.display = 'block'
 	}, 1000)
 
@@ -80,7 +79,7 @@ function init() {
 		body.traverse(function(node) {
 			if (node.background) {
 
-				node.background = new THREE.Color('rgba(255, 255, 255, 0)')
+				// node.background = new THREE.Color('rgba(255, 255, 255, 0)')
 				// ...
 
 			}
@@ -133,7 +132,7 @@ function init() {
 
 			directionY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
 
-			if(directionY > 0){
+			if (directionY > 0) {
 				scene.getObjectByName('Floating_rocks').position.y += .05
 				//scene.getObjectByName('Floating_rocks').position.z += .01
 				//scene.getObjectByName('Floating_rocks').position.x += .3
@@ -163,7 +162,6 @@ function init() {
 			raycaster.setFromCamera(mouse, camera)
 
 			var intersects = raycaster.intersectObjects(troll.children, true)
-			var sound_hover = document.querySelector('audio')
 			sound_hover.volume = 0.05
 
 			if (intersects.length > 0) {
@@ -176,7 +174,6 @@ function init() {
 					duration: 100
 				})
 
-				sound_hover.play()
 				popup.classList.add('show')
 
 				// camera.position.x += 1
@@ -188,7 +185,29 @@ function init() {
 
 		}
 
+		// ADD ENVIRONMENTAL SOUND
+
+		var listener = new THREE.AudioListener();
+		camera.add(listener);
+
+		var sound = new THREE.PositionalAudio(listener);
+
+		var audioLoader = new THREE.AudioLoader();
+		audioLoader.load('sounds/campfire.mp3', function(buffer) {
+			sound.setBuffer(buffer);
+			sound.setRefDistance(0.5);
+			sound.loop = true
+			sound.play();
+		});
+
+		var fire_big = scene.getObjectByName('Fire_big')
+		var fire_small = scene.getObjectByName('Fire_small')
+
+		fire_big.add(sound);
+		fire_small.add(sound);
+
 		console.log(scene)
+
 
 	})
 
