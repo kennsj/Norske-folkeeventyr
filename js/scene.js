@@ -162,7 +162,6 @@ function init() {
 			raycaster.setFromCamera(mouse, camera)
 
 			var intersects = raycaster.intersectObjects(troll.children, true)
-			sound_hover.volume = 0.05
 
 			if (intersects.length > 0) {
 

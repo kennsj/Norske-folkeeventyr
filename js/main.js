@@ -73,26 +73,6 @@ function loader(){
 }
 */
 
-var popup = document.querySelector('.story-popup')
-var close = document.querySelector('.exit')
-
-close.addEventListener('mousedown', function(event) {
-
-	event.preventDefault()
-	console.log('work');
-
-	Velocity(popup, {
-		opacity: 0
-	}, {
-		duration: 100,
-		delay: 0
-	})
-	setTimeout(function() {
-		popup.classList.remove('show')
-	}, 1000)
-
-})
-
 // ADD SOUND TO HOVER EFFECT
 
 var buttons = document.querySelectorAll('button')
@@ -122,5 +102,26 @@ for (var i = 0; i < social_icons.length; i++){
 	})
 }
 
+var popup = document.querySelector('.story-popup')
+// var close = document.querySelector('.exit')
+var close = document.querySelector('.close-button')
 
-//
+close.addEventListener('mouseover', function(){
+	sound_hover.play()
+})
+
+close.addEventListener('mousedown', function(event) {
+
+	event.preventDefault()
+
+	Velocity(popup, {
+		opacity: 0
+	}, {
+		duration: 100,
+		delay: 0
+	})
+	setTimeout(function() {
+		popup.classList.remove('show')
+	}, 1000)
+
+})
