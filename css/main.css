@@ -64,8 +64,9 @@ h2 {
     width: 50px;
     background-color: #AD322D;
     margin: 0 auto;
-    transform: translateY(-35px);
     opacity: 0;
+    margin-bottom: 35px;
+    transform: translateY(50px);
     transition: all cubic-bezier(.68,.54,.79,.68) .7s;
 }
 

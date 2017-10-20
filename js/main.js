@@ -17,7 +17,7 @@ window.onload = function() {
 	})
 	Velocity(article_divider, {
 		opacity: 1,
-		// translateY: '-35px'
+		translateY: 0
 	}, {
 		duration: 200,
 		delay: 300
