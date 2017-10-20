@@ -5,6 +5,7 @@ var article_h2 = document.querySelector('article h2')
 var article_p = document.querySelector('article p')
 var tutorial = document.querySelector('.tutorial')
 var button_start = document.querySelector('article button')
+var article_divider = document.querySelector('.article-divider')
 
 window.onload = function() {
 	Velocity(logo, {
@@ -14,33 +15,40 @@ window.onload = function() {
 		duration: 700,
 		delay: 0
 	})
-	Velocity(article_h2, {
+	Velocity(article_divider, {
 		opacity: 1,
-		translateY: 0,
+		// translateY: '-35px'
 	}, {
-		duration: 700,
+		duration: 200,
 		delay: 300
 	})
-	Velocity(article_p, {
+	Velocity(article_h2, {
 		opacity: 1,
 		translateY: 0,
 	}, {
 		duration: 700,
 		delay: 600
 	})
+	Velocity(article_p, {
+		opacity: 1,
+		translateY: 0,
+	}, {
+		duration: 700,
+		delay: 900
+	})
 	Velocity(tutorial, {
 		opacity: 1,
 		translateY: 0
 	}, {
 		duration: 700,
-		delay: 900
+		delay: 1200
 	})
 	Velocity(button_start, {
 		opacity: 1,
 		translateY: 0
 	}, {
 		duration: 700,
-		delay: 1200
+		delay: 1500
 	})
 }
 
