@@ -68,7 +68,7 @@ function init() {
 
 	var objectLoader = new THREE.ObjectLoader()
 	//objectLoader.load("https://dl.dropboxusercontent.com/s/y9c86x75er2qpjf/low_poly_island.json", function(obj) {
-	objectLoader.load('https://dl.dropboxusercontent.com/s/q15e8mph1rnfsuf/island_dark_light.json', function(obj) {
+	objectLoader.load('https://dl.dropboxusercontent.com/s/96plck9db77wk8f/island_dark_light.json', function(obj) {
 
 		scene.add(obj)
 
