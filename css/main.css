@@ -254,6 +254,7 @@ button .exit:hover {
     padding: 20px;
     background: url('../img/close.png') no-repeat;
     background-position: center;
+    cursor: pointer;
     transition: .5s;
 }
 
