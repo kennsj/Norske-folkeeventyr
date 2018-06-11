@@ -226,7 +226,8 @@ function init() {
 	var controls = new THREE.OrbitControls(camera, renderer.domElement)
 
 	controls.minDistance = 2
-	controls.maxDistance = 20
+	controls.maxDistance = 15
+	// controls.maxDistance = 20
 	// controls.target.set(0, 5, 3)
 
 	controls.minPolarAngle = Math.PI / 4
